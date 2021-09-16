@@ -125,7 +125,6 @@ ifeq (1,$(USE_DHCPV6))
   endif
 endif
 
-
 .PHONY: host-tools
 
 host-tools:
@@ -149,6 +148,13 @@ endif
 # Set a custom channel if needed
 # trying to use CFLAGS instead a mk file as before
 #include $(RIOTBASE)/Makefile.include
+# Set a custom channel if needed
+CFLAGS += -DCONFIG_GNRC_RPL_DEFAULT_NETIF=6
+#
+CFLAGS += -DCONFIG_GNRC_IPV6_NIB_NUMOF=50
+CFLAGS += -DCONFIG_GNRC_IPV6_NIB_OFFL_NUMOF=50
+#
+CFLAGS += -DCONFIG_GNRC_IPV6_NIB_DEFAULT_ROUTER_NUMOF=2
 CFLAGS += -DCONFIG_IEEE802154_DEFAULT_CHANNEL=22
 CFLAGS += -DCONFIG_IEEE802154_DEFAULT_SUBGHZ_CHANNEL=0
 # include $(RIOTMAKE)/default-radio-settings.inc.mk
