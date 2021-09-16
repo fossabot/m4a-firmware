@@ -29,6 +29,9 @@
 
 #include "log.h"
 
+#define MAIN_QUEUE_SIZE     (8)
+static msg_t _main_msg_queue[MAIN_QUEUE_SIZE];
+
 int dummy_cmd(int argc, char **argv)
 {
 
@@ -41,6 +44,7 @@ static shell_command_t shell_extended_commands[] = {
 
 int main(void)
 {
+     msg_init_queue(_main_msg_queue, MAIN_QUEUE_SIZE);
     LOG_INFO("~~ Welcome to Mesh4all ~~\n");
    
 

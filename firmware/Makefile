@@ -71,5 +71,5 @@ CFLAGS += -Wno-unused-variable
 # LOG_DEBUG;   Debug log level, printing developer stuff considered too verbose for production use */
 # LOG_ALL;     print everything
 CFLAGS += -DLOG_LEVEL=LOG_ALL
-
+CFLAGS += -DCONFIG_IEEE802154_DEFAULT_CHANNEL=22
 include $(RIOTBASE)/Makefile.include
