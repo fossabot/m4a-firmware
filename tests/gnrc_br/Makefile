@@ -18,10 +18,6 @@ ifeq (,$(filter ethos slip cdc-ecm wifi ethernet,$(UPLINK)))
   $(error Supported uplinks are `ethos`, `slip`, `cdc-ecm`, `ethernet` and `wifi`)
 endif
 
-# Set the SSID and password of your WiFi network here
-WIFI_SSID ?= "Your_WiFi_SSID"
-WIFI_PASS ?= "Your_secure_password"
-
 # Include packages that pull up and auto-init the link layer.
 # NOTE: 6LoWPAN will be included if IEEE802.15.4 devices are present
 USEMODULE += netdev_default
@@ -37,12 +33,12 @@ USEMODULE += ps
 
 # Optionally include RPL as a routing protocol. When includede gnrc_uhcpc will
 # configure the node as a RPL DODAG root when receiving a prefix.
-#USEMODULE += gnrc_rpl
+USEMODULE += gnrc_rpl
 USEMODULE += netutils
 # Add some stats
 USEMODULE += netstats_l2
 USEMODULE += netstats_ipv6
-#USEMODULE += netstats_rpl
+USEMODULE += netstats_rpl
 
 # Optionally include DNS support. This includes resolution of names at an
 # upstream DNS server and the handling of RDNSS options in Router Advertisements
