@@ -155,6 +155,5 @@ endif
 #include $(RIOTBASE)/Makefile.include
 CFLAGS += -DCONFIG_IEEE802154_DEFAULT_CHANNEL=22
 CFLAGS += -DCONFIG_IEEE802154_DEFAULT_SUBGHZ_CHANNEL=0
-
 # include $(RIOTMAKE)/default-radio-settings.inc.mk
 
