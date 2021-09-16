@@ -70,6 +70,7 @@ CFLAGS += -Wno-unused-variable
 # LOG_INFO;    Informational log level, will print purely informational messages like successful system bootup, network link state, etc
 # LOG_DEBUG;   Debug log level, printing developer stuff considered too verbose for production use */
 # LOG_ALL;     print everything
+CFLAGS += -DCONFIG_IEEE802154_DEFAULT_TXPOWER=3
 CFLAGS += -DLOG_LEVEL=LOG_ALL
 CFLAGS += -DCONFIG_IEEE802154_DEFAULT_CHANNEL=22
 include $(RIOTBASE)/Makefile.include
